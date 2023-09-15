@@ -4,6 +4,8 @@ class PostImage < ApplicationRecord
    
    belongs_to :user
    
+   has_many :post_coments, dependent: :destroy
+   
    def get_image
       
      unless image.attached?
