@@ -14,7 +14,7 @@ class PostImagesController < ApplicationController
     
     @post_image.save
     
-    redirect_to post_images_path
+    redirect_to post_images_path(@post_image)
     
   end
 
@@ -27,6 +27,8 @@ class PostImagesController < ApplicationController
   def show
    
     @post_image = PostImage.find(params[:id])
+    
+    @post_comment = PostComment.new
    
   end
 
