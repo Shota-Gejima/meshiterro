@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     
     @user = User.find(params[:id])
     
-    @post_images = @user.post_images
+    @post_images = @user.post_images.page(params[:page])
    
   end
 
